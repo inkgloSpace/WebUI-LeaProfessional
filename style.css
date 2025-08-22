@@ -1,0 +1,238 @@
+/* RESET & GLOBAL */
+
+header {
+  text-align: center;
+  padding: 0;
+  background-color: #141414; /* Atau warna latar lain yang sesuai */
+}
+
+.logo {
+  max-width: 200px; /* Atur ukuran sesuai kebutuhan */
+  height: auto;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
+
+h2, h3 {
+  margin-bottom: 0rem;
+}
+
+/* CONTAINER UNTUK CHANNEL */
+.channel-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.channel-card {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.channel-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.channel-number {
+  background-color: #2f2f2f;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.volume-section {
+  margin-bottom: 0.5rem;
+}
+
+.volume-section input[type="range"] {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.slider-wrapper input[type="range"] {
+  flex: 1;
+}
+
+.slider-wrapper span {
+  margin-left: 10px;
+  white-space: nowrap;
+  width: 20%;      
+  text-align: right; 
+  font-size: 12px; 
+}
+
+
+/* AUDIO OUT LEVEL BAR DAN PEAK*/
+.audio-level-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara bar dan dot */
+  margin-bottom: 1rem;
+}
+
+.audio-level {
+  flex: 1;
+  position: relative;
+  height: 15px;
+  background-color: #2f2f2f;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.audio-level-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  transition: width 0.3s;
+}
+
+.peak-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #3f3f3f;  /* Warna peak, bisa disesuaikan */
+  flex-shrink: 0;
+}
+
+.peak.on {
+  background-color: red;
+}
+
+
+/* INDIKATOR STATUS */
+.status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  background-color: #2f2f2f;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  background-color: #3f3f3f;
+}
+
+/* Saat indikator "ready" aktif, tambahkan kelas .on */
+.dot-ready.on {
+  background-color: #00ff5f;
+}
+
+/* BAGIAN AMP SIGNAL GENERATOR */
+.signal-generator {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 400px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.signal-generator h2 {
+  margin-bottom: 1rem;
+}
+
+.signal-generator label,
+.signal-generator select {
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* Kontainer untuk kontrol tiap channel (dengan layout vertikal) */
+.signal-generator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Setiap grup kontrol adalah satu baris */
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Label channel dengan lebar tetap agar sejajar */
+.channel-label {
+  width: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Tombol enable/disable styling */
+.toggle-button.disable {
+  background-color: #d13c3c;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggle-button.enable {
+  background-color: #24a148;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style untuk dropdown */
+.signal-generator select {
+  background-color: #2f2f2f; 
+  color: #ffffff;           
+  border: 1px solid #444;    
+  border-radius: 4px;       
+  padding: 0.4rem 0.6rem;
+  width: 80%;
+  max-width: 250px;
+  appearance: none;          
+  -webkit-appearance: none; 
+}
+
+/* Slider mengambil sisa ruang */
+.control-group input[type="range"] {
+  flex: 1;
+}

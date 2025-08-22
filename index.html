@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Amp Control Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <img src="aset/smiley.png" alt="logo" class="logo">
+</header>
+  <!-- 4 CHANNEL SECTION -->
+  <div class="channel-container">
+    <!-- Channel 1 -->
+    <div class="channel-card" data-channel="1">
+      <div class="channel-header">
+        <div class="channel-number">1</div>
+        <h3>Channel1</h3>
+      </div>
+      <div class="volume-section">
+        <div class="slider-wrapper">
+          <input type="range" id="volume-ch1" min="-80" max="0" value="0">
+          <span id="faderDisplay-ch1">0 dB</span>
+        </div>
+      </div>
+      <!-- Audio Input Level Bar -->
+      <div class="audio-level-container">
+        <div class="audio-level">
+          <div class="audio-level-bar" id="inputLevel-ch1"></div>
+        </div>
+        <div class="peak-indicator peak" id="peakIndicator-ch1"></div>
+      </div>
+      <!-- Status Indicators -->
+      <div class="status-section">
+        <div class="status-item">
+          <div class="status-dot dot-ready"></div>
+          <span id="readyStatus-ch1">Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 2 -->
+    <div class="channel-card" data-channel="2">
+      <div class="channel-header">
+        <div class="channel-number">2</div>
+        <h3>Channel2</h3>
+      </div>
+      <div class="volume-section">
+        <div class="slider-wrapper">
+         <input type="range" id="volume-ch2" min="-80" max="0" value="0">
+         <span id="faderDisplay-ch2">0 dB</span>
+      </div>
+    </div>
+      <div class="audio-level-container">
+        <div class="audio-level">
+          <div class="audio-level-bar" id="inputLevel-ch2"></div>
+        </div>
+        <div class="peak-indicator peak" id="peakIndicator-ch2"></div>
+      </div>
+      <div class="status-section">
+        <div class="status-item">
+          <div class="status-dot dot-ready"></div>
+          <span id="readyStatus-ch2">Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 3 -->
+    <div class="channel-card" data-channel="3">
+      <div class="channel-header">
+        <div class="channel-number">3</div>
+        <h3>Channel3</h3>
+      </div>
+      <div class="volume-section">
+        <div class="slider-wrapper">
+        <input type="range" id="volume-ch3" min="-80" max="0" value="0">
+        <span id="faderDisplay-ch3">0 dB</span>
+      </div>
+      </div>
+      <div class="audio-level-container">
+        <div class="audio-level">
+          <div class="audio-level-bar" id="inputLevel-ch3"></div>
+        </div>
+        <div class="peak-indicator peak" id="peakIndicator-ch3"></div>
+      </div>
+      <div class="status-section">
+        <div class="status-item">
+          <div class="status-dot dot-ready"></div>
+          <span id="readyStatus-ch3">Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 4 -->
+    <div class="channel-card" data-channel="4">
+      <div class="channel-header">
+        <div class="channel-number">4</div>
+        <h3>Channel4</h3>
+      </div>
+      <div class="volume-section">
+        <div class="slider-wrapper">
+        <input type="range" id="volume-ch4" min="-80" max="0" value="0">
+        <span id="faderDisplay-ch4">0 dB</span>
+      </div>
+    </div>
+      <div class="audio-level-container">
+        <div class="audio-level">
+          <div class="audio-level-bar" id="inputLevel-ch4"></div>
+        </div>
+        <div class="peak-indicator peak" id="peakIndicator-ch4"></div>
+      </div>
+      <div class="status-section">
+        <div class="status-item">
+          <div class="status-dot dot-ready"></div>
+          <span id="readyStatus-ch4">Ready</span>
+      </div>
+    </div>
+  </div>
+
+  
+ <!-- AMP SIGNAL GENERATOR -->
+<div class="signal-generator">
+  <h2>Amp Signal Generator</h2>
+  <select id="typeSelect">
+    <option value="White Noise">White Noise</option>
+    <option value="Pink Noise">Pink Noise</option>
+    <option value="Tone">Tone</option>
+  </select>
+  
+  <!-- Kontrol untuk tiap channel, ditampilkan satu per baris -->
+  <div class="signal-generator-controls">
+    <div class="control-group">
+      <span class="channel-label">Ch1</span>
+      <button class="toggle-button disable" id="signalToggleBtn-ch1">Disabled</button>
+      <input type="range" id="sgGain-ch1" min="-80" max="0" value="-60">
+    </div>
+    <div class="control-group">
+      <span class="channel-label">Ch2</span>
+      <button class="toggle-button disable" id="signalToggleBtn-ch2">Disabled</button>
+      <input type="range" id="sgGain-ch2" min="-80" max="0" value="-60">
+    </div>
+    <div class="control-group">
+      <span class="channel-label">Ch3</span>
+      <button class="toggle-button disable" id="signalToggleBtn-ch3">Disabled</button>
+      <input type="range" id="sgGain-ch3" min="-80" max="0" value="-60">
+    </div>
+    <div class="control-group">
+      <span class="channel-label">Ch4</span>
+      <button class="toggle-button disable" id="signalToggleBtn-ch4">Disabled</button>
+      <input type="range" id="sgGain-ch4" min="-80" max="0" value="-60">
+    </div>
+  </div>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
